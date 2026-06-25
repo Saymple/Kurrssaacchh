@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+
+    <img
+        src="{{ car.image.url }}"
+        class="card-img-top"
+        style="height:500px;object-fit:cover;"
+    >
+
+    <div class="card-body">
+
+        <h2>
+            {{ car.brand }} {{ car.model }}
+        </h2>
+
+        <h3 class="text-success">
+            {{ car.price }} ₽
+        </h3>
+
+        <hr>
+
+        <p>
+            <b>Год:</b> {{ car.year }}
+        </p>
+
+        <p>
+            <b>Пробег:</b> {{ car.mileage }} км
+        </p>
+
+        <p>
+            <b>Продавец:</b> {{ car.owner.username }}
+        </p>
+
+        <p>
+            <b>Город:</b> {{ car.owner.city }}
+        </p>
+
+        <hr>
+
+        <p>
+            {{ car.description }}
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}
